@@ -1,4 +1,4 @@
-package it.peruvianit.controllers;
+package it.peruvianit.controller.rest;
 
 import java.net.URI;
 
@@ -17,7 +17,7 @@ import it.peruvianit.service.IAllenatoreService;
 
 @RestController
 @RequestMapping("allenatore")
-public class MainController {
+public class AllenatoreRestController {
 
 	@Autowired
 	IAllenatoreService iAllenatoreService;
