@@ -1,15 +1,17 @@
 package it.peruvianit.service;
 
+import java.util.List;
+
 import it.peruvianit.dto.AllenatoreDTO;
 
 public interface IAllenatoreService {
 	
-	/**
-	 * 
-	 * @param anagraficaAllenatoreDTO codice gestito dall'applicazione "SBVB"
-	 * 
-	 * @version 1.0.1
-	 */
+	public List<AllenatoreDTO> listaAllenatore();
+	
+	public AllenatoreDTO allenatoreById(Long progressivoAllenatore);
 	
 	public AllenatoreDTO salvaAllenatore(AllenatoreDTO allenatoreDTO);
+	
+	public void cancellaAllenatore(Long progressivoAllenatore);
+	
 }
