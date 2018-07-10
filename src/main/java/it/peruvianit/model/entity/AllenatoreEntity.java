@@ -54,7 +54,7 @@ public class AllenatoreEntity {
 	private String allFlagTrasfertaContinente;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "ALL_DATA_REGISTRAZIONE")
+	@Column(name = "ALL_DATA_REGISTRAZIONE", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable=false, updatable=false)
 	private Date allDataRegistrazione;
 
 	public Long getId() {

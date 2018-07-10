@@ -36,12 +36,12 @@ public class AllenatoreRestController {
 		return iAllenatoreService.allenatoreById(id);
 	}
 	
-	@PostMapping("/")
-    public ResponseEntity<Object> salva(@Valid @RequestBody AllenatoreDTO anagraficaAllenatoreDTO) {
-		anagraficaAllenatoreDTO = iAllenatoreService.salvaAllenatore(anagraficaAllenatoreDTO);
+	@PostMapping()
+    public ResponseEntity<Object> salva(@Valid @RequestBody AllenatoreDTO allenatoreDTO) {
+		allenatoreDTO = iAllenatoreService.salvaAllenatore(allenatoreDTO);
 		
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(anagraficaAllenatoreDTO.getProgressivoAllenatore()).toUri();
+				.buildAndExpand(allenatoreDTO.getProgressivoAllenatore()).toUri();
 		
         return ResponseEntity.created(location).build();
     }

@@ -2,12 +2,12 @@ package it.peruvianit.dto;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class TipoLicenzaDTO implements Serializable {
 	private static final long serialVersionUID = -7498760841910052756L;
 
-	@NotEmpty
+	@NotNull
 	private Long progressivoTipoLicenza;
 	
 	private String nomeTipoLicenza;
