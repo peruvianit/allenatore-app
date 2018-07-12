@@ -21,7 +21,7 @@ public class EntityToDto implements IEntityToDto {
 			
 			Long licId = allenatoreEntity.getLicId();
 			if ( licId != null ) {
-				TipoLicenzaDTO tipoLicenzaDTO = allenatoreDTO.getTipoLicenzaDTO();
+				TipoLicenzaDTO tipoLicenzaDTO = new TipoLicenzaDTO();
 				tipoLicenzaDTO.setProgressivoTipoLicenza(licId);
 				allenatoreDTO.setTipoLicenzaDTO(tipoLicenzaDTO);				
 			}

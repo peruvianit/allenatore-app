@@ -1,6 +1,6 @@
 package it.peruvianit.exception;
 
-public class AllenatoreException extends RuntimeException {
+public class AllenatoreException extends CercaMisterException {
 	
 	private static final long serialVersionUID = -4371234567250509912L;
 

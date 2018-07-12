@@ -30,6 +30,16 @@ public class AllenatoreServiceImpl implements IAllenatoreService{
 	@Override
 	public AllenatoreDTO salvaAllenatore(AllenatoreDTO allenatoreDTO) {
 		
+		Long progressivoAllenatore = allenatoreDTO.getProgressivoAllenatore();
+		
+		if ( progressivoAllenatore != null ) {
+			Optional<AllenatoreEntity> allenatoreEntity = allenatoreRepository.findById(progressivoAllenatore);
+			
+			if (!allenatoreEntity.isPresent()) {
+				throw new AllenatoreNotFoundException(progressivoAllenatore.toString());
+			}
+		}
+		
 		AllenatoreEntity allenatoreEntity = iDtoToEntity.allenatoreDTOToAllenatoreEntity(allenatoreDTO);
 		
 		allenatoreRepository.save(allenatoreEntity);
@@ -57,7 +67,7 @@ public class AllenatoreServiceImpl implements IAllenatoreService{
 	public AllenatoreDTO allenatoreById(Long progressivoAllenatore) {
 		Optional<AllenatoreEntity> allenatoreEntity  = allenatoreRepository.findById(progressivoAllenatore);
 		
-		if (allenatoreEntity == null ) {
+		if (!allenatoreEntity.isPresent()) {
 			throw new AllenatoreNotFoundException(progressivoAllenatore.toString());
 		}
 		
@@ -68,10 +78,10 @@ public class AllenatoreServiceImpl implements IAllenatoreService{
 	public void cancellaAllenatore(Long progressivoAllenatore) {
 		Optional<AllenatoreEntity> allenatoreEntity  = allenatoreRepository.findById(progressivoAllenatore);
 		
-		if (allenatoreEntity != null ) {
-			allenatoreRepository.delete(allenatoreEntity.get());
-		}else {
+		if (!allenatoreEntity.isPresent()) {
 			throw new AllenatoreNotFoundException(progressivoAllenatore.toString());
 		}
+		
+		allenatoreRepository.delete(allenatoreEntity.get());
 	}
 }
