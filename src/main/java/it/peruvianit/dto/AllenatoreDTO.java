@@ -8,12 +8,18 @@ import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(value ="AllenatoreDTO")
 public class AllenatoreDTO implements Serializable {
 	private static final long serialVersionUID = 4815113711689913021L;
 
+	@ApiModelProperty(notes = "Numero identificativo del allenatore")
 	private Long progressivoAllenatore;
 	
 	@Valid
+	@ApiModelProperty(notes = "Tipologia licenza")
 	private TipoLicenzaDTO tipoLicenzaDTO;
 	
 	@NotEmpty
@@ -21,17 +27,24 @@ public class AllenatoreDTO implements Serializable {
 	
 	@NotEmpty
 	private String cognome;
-	
+
+	@ApiModelProperty(notes = "Nazione da residenza")
 	private String nazione;
+	@ApiModelProperty(notes = "Citta da residenza")
 	private String citta;
+	@ApiModelProperty(notes = "Indirizzo residenza")
 	private String descrizioneIndirizzo;
 	
 	@Email
 	private String email;
 	private String telefono;
+	@ApiModelProperty(notes = "Posibilita di spostamento Citta")
 	private String flgaSpostaCitta;
+	@ApiModelProperty(notes = "Posibilita di spostamento Nazione")
 	private String flgaSpostaNazione;
+	@ApiModelProperty(notes = "Posibilita di spostamento Continente")
 	private String flgaSpostaContinente;
+	@ApiModelProperty(notes = "Data de registrazione")
 	private Date dataRegistrazione;
 	
 	public Long getProgressivoAllenatore() {
