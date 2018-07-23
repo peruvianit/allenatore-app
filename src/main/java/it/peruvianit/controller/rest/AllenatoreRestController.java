@@ -29,7 +29,7 @@ import it.peruvianit.service.IAllenatoreService;
 
 @RestController
 @Api(value="Allenatori",description="Risorse Allenatori")
-@RequestMapping("/allenatori")
+@RequestMapping("/v1.0/allenatori")
 @ApiResponses(value = {@ApiResponse(code = 401, message = "Non autorizzato"),
 		   			   @ApiResponse(code = 403, message = "La richiesta è legittima ma il server si rifiuta di soddisfarla"),
 		   			   @ApiResponse(code = 404, message = "La risorsa richiesta non è stata trovata ma in futuro potrebbe essere disponibile"),
