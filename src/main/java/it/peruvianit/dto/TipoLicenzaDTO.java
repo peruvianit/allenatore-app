@@ -10,7 +10,7 @@ public class TipoLicenzaDTO implements Serializable {
 	@NotNull
 	private Long progressivoTipoLicenza;
 	
-	private String nomeTipoLicenza;
+	private String codiceTipoLicenza;
 	private String descrizioneTipoLicenza;
 	
 	public Long getProgressivoTipoLicenza() {
@@ -19,11 +19,11 @@ public class TipoLicenzaDTO implements Serializable {
 	public void setProgressivoTipoLicenza(Long progressivoTipoLicenza) {
 		this.progressivoTipoLicenza = progressivoTipoLicenza;
 	}
-	public String getNomeTipoLicenza() {
-		return nomeTipoLicenza;
+	public String getCodiceTipoLicenza() {
+		return codiceTipoLicenza;
 	}
-	public void setNomeTipoLicenza(String nomeTipoLicenza) {
-		this.nomeTipoLicenza = nomeTipoLicenza;
+	public void setCodiceTipoLicenza(String nomeTipoLicenza) {
+		this.codiceTipoLicenza = nomeTipoLicenza;
 	}
 	public String getDescrizioneTipoLicenza() {
 		return descrizioneTipoLicenza;

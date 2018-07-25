@@ -38,6 +38,7 @@ public class AllenatoreDTO implements Serializable {
 	@Email
 	private String email;
 	private String telefono;
+	
 	@ApiModelProperty(notes = "Posibilita di spostamento Citta")
 	private String flgaSpostaCitta;
 	@ApiModelProperty(notes = "Posibilita di spostamento Nazione")
