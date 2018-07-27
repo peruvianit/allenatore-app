@@ -92,6 +92,13 @@
            <plugin>
                <groupId>org.springframework.boot</groupId>
                <artifactId>spring-boot-maven-plugin</artifactId>
+               <configuration>
+			        <finalName>${rp.build.warname}</finalName>
+				      <profiles>
+						  	<profile>dev</profile>
+							<profile>release</profile>
+					  </profiles>
+			    </configuration>
            </plugin>
        </plugins>
     <resources>
@@ -102,24 +109,4 @@
     </resources>
   </build>
   
-  <profiles>
-  	<profile>
-	    <id>dev</id>
-	    <properties>
-	        <activatedProperties>dev</activatedProperties>
-	    </properties>
-	    <activation>
-	        <activeByDefault>true</activeByDefault>
-	    </activation>
-	</profile>
-	<profile>
-	    <id>release</id>
-	    <properties>
-	        <activatedProperties>release</activatedProperties>
-	    </properties>
-	</profile>
-  </profiles>
-  
-  
-	
 </project>

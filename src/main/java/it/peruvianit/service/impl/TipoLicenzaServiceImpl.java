@@ -21,9 +21,9 @@ public class TipoLicenzaServiceImpl implements ITipoLicenzaService{
 	private DozerBeanMapper rdDozerMapper;
 	@Override
 	public List<TipoLicenzaDTO> listaTipoLicenze() {
-		List<TipoLicenzaEntity> tipolicDb = tipoLicenzaRepository.findAll(new Sort(Direction.ASC,"descrizioneTipoLicenza") );
+		List<TipoLicenzaEntity> listTipoLicenzaEntity = tipoLicenzaRepository.findAll(new Sort(Direction.ASC,"descrizioneTipoLicenza") );
 		List<TipoLicenzaDTO> targets = new ArrayList<TipoLicenzaDTO>();
-		for (TipoLicenzaEntity tipoLicenzaEntity : tipolicDb) {
+		for (TipoLicenzaEntity tipoLicenzaEntity : listTipoLicenzaEntity) {
     		targets.add(rdDozerMapper.map(tipoLicenzaEntity, TipoLicenzaDTO.class));
 		}
 		return targets;
