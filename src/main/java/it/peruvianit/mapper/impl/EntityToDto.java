@@ -33,9 +33,9 @@ public class EntityToDto implements IEntityToDto {
 			allenatoreDTO.setDescrizioneIndirizzo(allenatoreEntity.getAllIndirizzo());
 			allenatoreDTO.setEmail(allenatoreEntity.getAllEmail());
 			allenatoreDTO.setTelefono(allenatoreEntity.getAllTelefono());
-			allenatoreDTO.setFlgaSpostaCitta(allenatoreEntity.getAllFlagTrasfertaCitta());
-			allenatoreDTO.setFlgaSpostaNazione(allenatoreEntity.getAllFlagTrasfertaNazione());
-			allenatoreDTO.setFlgaSpostaContinente(allenatoreEntity.getAllFlagTrasfertaContinente());
+			allenatoreDTO.setFlagSpostaCitta(allenatoreEntity.getAllFlagTrasfertaCitta());
+			allenatoreDTO.setFlagSpostaNazione(allenatoreEntity.getAllFlagTrasfertaNazione());
+			allenatoreDTO.setFlagSpostaContinente(allenatoreEntity.getAllFlagTrasfertaContinente());
 			
 		}
 		

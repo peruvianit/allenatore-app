@@ -40,11 +40,11 @@ public class AllenatoreDTO implements Serializable {
 	private String telefono;
 	
 	@ApiModelProperty(notes = "Posibilita di spostamento Citta")
-	private String flgaSpostaCitta;
+	private String flagSpostaCitta;
 	@ApiModelProperty(notes = "Posibilita di spostamento Nazione")
-	private String flgaSpostaNazione;
+	private String flagSpostaNazione;
 	@ApiModelProperty(notes = "Posibilita di spostamento Continente")
-	private String flgaSpostaContinente;
+	private String flagSpostaContinente;
 	@ApiModelProperty(notes = "Data de registrazione")
 	private Date dataRegistrazione;
 	
@@ -102,23 +102,23 @@ public class AllenatoreDTO implements Serializable {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public String getFlgaSpostaCitta() {
-		return flgaSpostaCitta;
+	public String getFlagSpostaCitta() {
+		return flagSpostaCitta;
 	}
-	public void setFlgaSpostaCitta(String flgaSpostaCitta) {
-		this.flgaSpostaCitta = flgaSpostaCitta;
+	public void setFlagSpostaCitta(String flagSpostaCitta) {
+		this.flagSpostaCitta = flagSpostaCitta;
 	}
-	public String getFlgaSpostaNazione() {
-		return flgaSpostaNazione;
+	public String getFlagSpostaNazione() {
+		return flagSpostaNazione;
 	}
-	public void setFlgaSpostaNazione(String flgaSpostaNazione) {
-		this.flgaSpostaNazione = flgaSpostaNazione;
+	public void setFlagSpostaNazione(String flagSpostaNazione) {
+		this.flagSpostaNazione = flagSpostaNazione;
 	}
-	public String getFlgaSpostaContinente() {
-		return flgaSpostaContinente;
+	public String getFlagSpostaContinente() {
+		return flagSpostaContinente;
 	}
-	public void setFlgaSpostaContinente(String flgaSpostaContinente) {
-		this.flgaSpostaContinente = flgaSpostaContinente;
+	public void setFlagSpostaContinente(String flagSpostaContinente) {
+		this.flagSpostaContinente = flagSpostaContinente;
 	}
 	public Date getDataRegistrazione() {
 		return dataRegistrazione;
