@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>it.peruvianit</groupId>
+  <groupId>it.cercamister</groupId>
   <artifactId>allenatore</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Servizi Rest - Test</name>
+  <name>Allenatore</name>
 <!--   <packaging>war</packaging> -->
   <parent>
         <groupId>org.springframework.boot</groupId>
@@ -16,7 +16,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<rp.build.warname>allenatore</rp.build.warname>
 		<dozer.version>5.5.1</dozer.version>
-		<start-class>it.peruvianit.AllenatoreApplication</start-class>
+		<start-class>it.cercamister.AllenatoreApplication</start-class>
 	</properties>
 <dependencies>
 	  <dependency>
