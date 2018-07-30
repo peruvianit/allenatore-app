@@ -15,7 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -54,14 +53,13 @@ public class TerritorioServiceImpl implements ITerritorioService{
 	public List<RegioneDTO> listaRegioneDTO() throws IOException {
 		List<RegioneDTO> listRegioneDTO = new ArrayList<>();	
 		RegioneDTO target = new RegioneDTO() ;
-		logger.debug("");
-		String theUrl = host+port+context+regioni;//http://localhost:9092/api-in/territorio/regioni
+		String theUrl = host+port+context+regioni;
+		logger.debug("theUrl ---> "+theUrl);
+		
 		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = createHttpHeaders();
 		ObjectMapper mapper = new ObjectMapper();
-		List<?> dtoRichL = new ArrayList<String>();
-		String	jsonStr = mapper.writeValueAsString(dtoRichL);
-			 HttpEntity<String> entity = new HttpEntity<String>(jsonStr, headers);
+			 HttpEntity<String> entity = new HttpEntity<String>("", headers);
 			 ResponseEntity<String> response = restTemplate.exchange(theUrl, HttpMethod.GET, entity, String.class);
 			 JavaType type = mapper.getTypeFactory().constructCollectionType(ArrayList.class, target.getClass()) ;
 			 listRegioneDTO =  (ArrayList<RegioneDTO>)mapper.readValue(response.getBody(), type);
@@ -73,13 +71,11 @@ public class TerritorioServiceImpl implements ITerritorioService{
 	public List<ProvinciaDTO> listaProvinciaDTO(String codiceRegione) throws IOException {
 		List<ProvinciaDTO> listProvinciaDTO = new ArrayList<>();	
 		ProvinciaDTO target = new ProvinciaDTO() ;
-		String theUrl = host+port+context+provincie+codiceRegione;//http://localhost:9092/api-in/territorio/regioni
+		String theUrl = host+port+context+provincie+codiceRegione;
 		logger.debug("theUrl ---> "+theUrl);
 		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = createHttpHeaders();
 		ObjectMapper mapper = new ObjectMapper();
-		//List<?> dtoRichL = new ArrayList<String>();
-		//String	jsonStr = mapper.writeValueAsString(dtoRichL);
 			 HttpEntity<String> entity = new HttpEntity<String>("", headers);
 			 ResponseEntity<String> response = restTemplate.exchange(theUrl, HttpMethod.GET, entity, String.class);
 			 JavaType type = mapper.getTypeFactory().constructCollectionType(ArrayList.class, target.getClass()) ;
@@ -92,14 +88,13 @@ public class TerritorioServiceImpl implements ITerritorioService{
 	public List<ComuneDTO> listaComuneDTO(String codiceProvincia) throws IOException {
 		List<ComuneDTO> listComuneDTO = new ArrayList<>();	
 		ComuneDTO target = new ComuneDTO() ;
-		logger.debug("");
-		String theUrl = host+port+context+comuni+codiceProvincia;//http://localhost:9092/api-in/territorio/regioni
+		String theUrl = host+port+context+comuni+codiceProvincia;
+		logger.debug("theUrl ---> "+theUrl);
+		
 		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = createHttpHeaders();
 		ObjectMapper mapper = new ObjectMapper();
-		List<?> dtoRichL = new ArrayList<String>();
-		String	jsonStr = mapper.writeValueAsString(dtoRichL);
-			 HttpEntity<String> entity = new HttpEntity<String>(jsonStr, headers);
+			 HttpEntity<String> entity = new HttpEntity<String>("", headers);
 			 ResponseEntity<String> response = restTemplate.exchange(theUrl, HttpMethod.GET, entity, String.class);
 			 JavaType type = mapper.getTypeFactory().constructCollectionType(ArrayList.class, target.getClass()) ;
 			 listComuneDTO =  (ArrayList<ComuneDTO>)mapper.readValue(response.getBody(), type);
