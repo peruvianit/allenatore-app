@@ -2,7 +2,6 @@ package it.cercamister.config;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
-import org.dozer.DozerBeanMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
