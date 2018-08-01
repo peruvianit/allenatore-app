@@ -15,7 +15,7 @@ import it.cercamister.service.ITipoLicenzaService;
 
 @RestController
 @Api(value="Tipologiche",description="Risorse Tipologiche")
-@RequestMapping("/tipologiche")
+@RequestMapping("/v1.0/tipologiche")
 @ApiResponses(value = {@ApiResponse(code = 401, message = "Non autorizzato"),
 		   			   @ApiResponse(code = 403, message = "La richiesta è legittima ma il server si rifiuta di soddisfarla"),
 		   			   @ApiResponse(code = 404, message = "La risorsa richiesta non è stata trovata ma in futuro potrebbe essere disponibile"),

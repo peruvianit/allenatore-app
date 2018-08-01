@@ -22,7 +22,7 @@ public class SwaggerConfig {
 				.useDefaultResponseMessages(false)
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("it.cercamister.controller.rest"))
-				.paths(regex("/allenatori.*"))
+				.paths(regex("/v1.0/allenatori.*"))
 				.build()
 				.apiInfo(apiInfo());
 	}
