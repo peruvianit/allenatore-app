@@ -1,7 +1,9 @@
 package it.cercamister.mapper;
 
 import it.cercamister.dto.AllenatoreDTO;
+import it.cercamister.dto.RegistrazioneDTO;
 import it.cercamister.model.entity.AllenatoreEntity;
+import it.cercamister.model.entity.RegistrazioneEntity;
 /**
  * 
  * @author Sergio Arellano
@@ -17,4 +19,7 @@ public interface IDtoToEntity {
 	 * @return Entity Allenatore
 	 */
 	public AllenatoreEntity allenatoreDTOToAllenatoreEntity(AllenatoreDTO allenatoreDTO);
+	
+	public RegistrazioneEntity registrazioneDTOToRegistrazioneEntity(RegistrazioneDTO registrazioneDTO);
+	
 }
